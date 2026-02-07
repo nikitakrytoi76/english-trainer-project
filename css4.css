@@ -1,0 +1,69 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.back-link {
+    text-decoration: none;
+    color: #0984e3;
+    font-weight: bold;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Стиль карточки с правилом */
+.grammar-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.grammar-card h3 {
+    color: #2d3436;
+    margin-top: 0;
+    border-bottom: 2px solid #0984e3;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.rule-text {
+    color: #636e72;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+/* Блок с примерами */
+.examples-box {
+    background: #e1f5fe;
+    border-left: 5px solid #0984e3;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.examples-box h4 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #01579b;
+    text-transform: uppercase;
+}
+
+.example-item {
+    display: block;
+    margin-bottom: 5px;
+    font-style: italic;
+    color: #2d3436;
+}

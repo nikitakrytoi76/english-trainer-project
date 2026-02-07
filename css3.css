@@ -1,0 +1,94 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    width: 400px;
+}
+
+.back-link {
+    display: block;
+    margin-bottom: 20px;
+    color: #0984e3;
+    text-decoration: none;
+}
+
+/* Сцена для 3D */
+.flashcard-container {
+    perspective: 1000px;
+    width: 100%;
+    height: 250px;
+    cursor: pointer;
+    margin: 30px 0;
+}
+
+/* Сама карточка */
+.flashcard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 20px;
+}
+
+/* Класс, который мы будем добавлять через JS для поворота */
+.flashcard.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Общие стили сторон */
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Скрывает сторону, если она повернута «спиной» */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.front h1 { color: #2d3436; font-size: 40px; }
+.front span { color: #b2bec3; font-size: 14px; }
+
+/* Задняя сторона повернута заранее */
+.back {
+    background: #0984e3;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.back p { font-style: italic; opacity: 0.9; margin-top: 10px; }
+
+/* Кнопки */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    background: #2d3436;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover { background: #000; }
+button:disabled { background: #ccc; cursor: not-allowed; }

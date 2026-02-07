@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>English Trainer | Новые слова</title>
+    <link rel="stylesheet" href="css3.css">
+</head>
+<body>
+
+    <div class="container">
+        <a href="firstpage.html" class="back-link">← Назад в меню</a>
+        
+        <h2>Учим новые слова 📖</h2>
+        <p>Нажми на карточку, чтобы увидеть перевод</p>
+
+        <div class="flashcard-container" onclick="flipCard()">
+            <div class="flashcard" id="card">
+                <div class="front">
+                    <h1 id="wordEn">Apple</h1>
+                    <span>Английский</span>
+                </div>
+                <div class="back">
+                    <h1 id="wordRu">Яблоко</h1>
+                    <p id="wordEx">Example: I eat an apple every day.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button onclick="prevWord()" id="prevBtn">⬅ Назад</button>
+            <span id="progress">1 / 10</span>
+            <button onclick="nextWord()" id="nextBtn">Вперед ➡</button>
+        </div>
+    </div>
+
+    <script src="js3.js"></script>
+</body>
+</html>

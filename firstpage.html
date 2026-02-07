@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>English Trainer - Меню</title>
+    <link rel="stylesheet" href="css2.css">
+</head>
+<body>
+    <div class="menu-container">
+        <header class="menu-header">
+            <h1 id="welcomeText">Привет! 👋</h1>
+            <div class="level-wrapper">
+                <div id="levelStatus">Твой уровень: ...</div>
+                <div id="levelInfo">Загрузка описания...</div>
+            </div>
+        </header>
+
+        <div class="menu-grid">
+            <div class="menu-card" onclick="location.href='vocabulary.html'">
+                <div class="card-icon">📖</div>
+                <h3>Новые слова</h3>
+                <p>Учи по 10 слов в день</p>
+            </div>
+
+            <div class="menu-card" onclick="location.href='grammar.html'">
+                <div class="card-icon">⚙️</div>
+                <h3>Грамматика</h3>
+                <p>Правила и упражнения</p>
+            </div>
+             <div class="menu-card game-card" onclick="location.href='game.html'">
+                <div class="card-icon">🎮</div>
+                <h3>Играть</h3>
+                <p>Поймай все слова</p>
+            </div>
+            <div class="menu-card dict-card" onclick="location.href='game-words.html'">
+                <div class="card-icon">📚</div>
+                <h3>Мой словарь</h3>
+                <p>Слова, пойманные в игре</p>
+            </div>
+
+            
+
+            <div class="menu-card logout-card" onclick="logout()">
+                <div class="card-icon">🚪</div>
+                <h3>Выход</h3>
+                <p>Сменить пользователя</p>
+            </div>
+        </div>
+    </div>
+    <script src="js2.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой словарь</title>
+    <link rel="stylesheet" href="css2.css"> <style>
+        .word-list { display: grid; gap: 10px; margin-top: 20px; }
+        .word-row { 
+            background: white; 
+            padding: 15px; 
+            border-radius: 10px; 
+            display: flex; 
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .en-word { font-weight: bold; color: #0984e3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="firstpage.html">← В меню</a>
+            <h1>Пойманные слова 🏆</h1>
+            <p>Эти слова ты собрал во время игры</p>
+        </header>
+
+        <div id="dictionaryContainer" class="word-list">
+            </div>
+        
+        <button onclick="clearWords()" style="margin-top: 20px; background: #ff7675; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">
+            Очистить словарь
+        </button>
+    </div>
+
+    <script>
+        function displayWords() {
+            const container = document.getElementById('dictionaryContainer');
+            const words = JSON.parse(localStorage.getItem("myLearnedWords")) || [];
+
+            if (words.length === 0) {
+                container.innerHTML = "<p>Словарь пока пуст. Поиграй в игру!</p>";
+                return;
+            }
+
+            container.innerHTML = words.map(word => `
+                <div class="word-row">
+                    <span class="en-word">${word.en}</span>
+                    <span class="ru-word">${word.ru}</span>
+                </div>
+            `).join('');
+        }
+
+        function clearWords() {
+            if(confirm("Точно очистить все слова?")) {
+                localStorage.removeItem("myLearnedWords");
+                displayWords();
+            }
+        }
+
+        displayWords();
+    </script>
+</body>
+</html>
