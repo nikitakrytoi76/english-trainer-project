@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById('levelInfo').textContent = descriptions[userData.level] || 'Описание скоро появится!';
     } else {
-        location.href = 'firstpage.html';
+        location.href = 'index.html';
     }
 });
 
@@ -23,4 +23,5 @@ function logout() {
         localStorage.removeItem("englishUser");
         location.href = 'registration.html';
     }
+
 }
