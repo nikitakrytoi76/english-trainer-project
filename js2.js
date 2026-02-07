@@ -14,14 +14,15 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.getElementById('levelInfo').textContent = descriptions[userData.level] || 'Описание скоро появится!';
     } else {
-        location.href = 'index.html';
+        location.href = 'firstpage.html';
     }
 });
 
 function logout() {
     if (confirm("Выйти?")) {
         localStorage.removeItem("englishUser");
-        location.href = 'registration.html';
+        location.href = 'index.html';
     }
 
 }
+
