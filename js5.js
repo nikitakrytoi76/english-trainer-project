@@ -33,7 +33,16 @@ document.addEventListener("mousemove", (e) => {
         paddleX = relativeX - paddleWidth / 2;
     }
 });
-
+// Добавляем управление пальцем для телефонов
+document.addEventListener("touchmove", (e) => {
+    // Предотвращаем прокрутку страницы, когда ведем пальцем по игре
+    e.preventDefault();
+    let touch = e.touches[0];
+    let relativeX = touch.clientX - canvas.offsetLeft;
+    if (relativeX > 0 && relativeX < canvas.width) {
+        paddleX = relativeX - paddleWidth / 2;
+    }
+}, { passive: false });
 function drawBall() {
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
@@ -93,5 +102,6 @@ function draw() {
     y += dy;
     requestAnimationFrame(draw);
 }
+
 
 draw();
